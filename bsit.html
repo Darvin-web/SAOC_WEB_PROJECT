@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NEUST San Antonio - Home</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e6e6e6;
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(to right, #0f4c96, #1c478e);
+      color: white;
+      padding: 15px;
+      text-align: center;
+      position: relative;
+    }
+
+    .header h1 {
+      font-size: 20px;
+      color: #ffcc00;
+      margin-bottom: 5px;
+    }
+
+    .header h2 {
+      font-size: 16px;
+      color: white;
+    }
+
+    .header img.logo {
+      height: 70px;
+      position: absolute;
+      top: 10px;
+    }
+
+    .header .logo.left {
+      left: 20px;
+    }
+
+    .header .logo.right {
+      right: 20px;
+    }
+
+    /* Navigation Bar with Dropdown */
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      background-color: #1c478e;
+      display: flex;
+      justify-content: center; /* Center horizontally */
+      align-items: center;
+      gap: 20px; /* Space between menu items */
+    }
+
+    li {
+      position: relative; /* Needed for dropdown positioning */
+    }
+
+    li a, .dropbtn {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover, .dropdown:hover .dropbtn {
+      background-color: red;
+    }
+
+    li.dropdown {
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color:  #1c478e;
+      min-width: 100px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: center;
+    }
+
+    .dropdown-content a:hover {
+      background-color: red;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      top: 123px;
+      left: 0;
+      width: 200px;
+      background-color: #f1f1f1;
+      height: calc(100% - 190px);
+      padding-top: 20px;
+      border-right: 1px solid #ccc;
+    }
+
+    .sidebar a {
+      display: block;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .sidebar a:hover {
+      background-color: red;
+      color: white;
+    }
+
+    /* Main Content */
+    .main {
+      margin-left: 200px;
+      padding: 40px 20px;
+      min-height: calc(100vh - 250px);
+      text-align: center;
+      background-size: cover;
+      position: relative;
+    }
+
+    .main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: -1;
+}
+
+
+    .main h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: black;
+    }
+
+    .main h3 {
+      color: black;
+      margin: 20px 0 10px;
+      font-size: 20px;
+    }
+
+    .main p {
+      font-size: 16px;
+      color: bla;
+      margin: 5px 0;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #f7a933;
+      color: #333;
+      text-align: center;
+      padding: 16px 10px;
+      font-weight: bold;
+      font-size: 16px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    p.dotted {border-style: solid;}
+
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <img src="logo.webp" alt="Left Logo" class="logo left">
+    <h1>NUEVA ECIJA UNIVERSITY OF SCIENCE AND TECHNOLOGY</h1>
+    <h2>San Antonio Off-Campus</h2>
+    <img src="2.png" alt="Right Logo" class="logo right">
+  </div>
+
+  <!-- Navigation Menu -->
+  <ul>
+    <li><a href="home.html">Home</a></li>
+    <li><a href="news.html">News</a></li>
+    <li class="dropdown">
+      <a href="download.html" class="dropbtn">Downloads</a>
+      <div class="dropdown-content">
+        <a href="#">Clerance Form</a>
+        <a href="#">Feedback Form</a>
+        <a href="#">Inquiry Form</a>
+      </div>
+    </li>
+    <li><a href="index.html">Logout</a></li>
+  </ul>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+  <a href="administrator.html">Administration</a>
+  <a href="facilities.html">Facilities</a>
+  <a href="faculty.html">Faculty</a>
+
+  <!-- Dropdown Course -->
+  <div class="dropdown">
+    <a href="course.html" class="dropbtn">Course</a>
+    <div class="dropdown-content">
+      <a href="bsit.html">BIST</a>
+      <a href="beed.html">BEED</a>
+      <a href="bsentre.html">BS ENTRE</a>
+    </div>
+  </div>
+</div>
+
+  <!-- Main Content -->
+  <!-- Main Content -->
+<div class="main">
+  <div style="display: flex; gap: 30px; align-items: flex-start;">
+    <!-- Left Content -->
+    <div style="flex: 2; text-align: left;">
+      <div class="section">
+        <h2>Administration</h2>
+        <ul>
+          <li>Dr. Feliciana P. Jacoba – University President</li>
+          <li>Dr. Rowena T. Reyes – VP for Academic Affairs</li>
+          <li>Dr. Restie C. Concepcion – VP for Administration</li>
+          <li>Dr. Rhodora S. Jugarap – VP for Student Affairs</li>
+          <li>Mr. Melanio L. Esteban – Campus Administrator</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Facilities</h2>
+        <ul>
+          <li>Computer Laboratories</li>
+          <li>Audio-Visual Room</li>
+          <li>Library</li>
+          <li>Research and Development Center</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Faculty</h2>
+        <p>The faculty members are composed of professionals with expertise in various fields of technology and education.</p>
+      </div>
+
+      <div class="section">
+        <h2>Course</h2>
+        <p>Offered Course: Bachelor of Technical-Vocational Teacher Education (BTVTEd) major in:</p>
+        <ul>
+         <li>Bachelor of Science Information Technology</li>
+          <li>Bachelor of Elementary Education</li>
+          <li>Bachelor of Science in Entrepreneurship</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Right Image -->
+    <div style="flex: 1;">
+      <img src="bsit.png" alt="Illustration" style="width: 100%; border-radius: 10px;">
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Footer -->
+  <div class="footer">
+    TRANSFORMING LIVES THROUGH SCIENCE AND TECHNOLOGY<br>
+    <strong>GAWA Hindi Salita!</strong>
+  </div>
+
+</body>
+</html>

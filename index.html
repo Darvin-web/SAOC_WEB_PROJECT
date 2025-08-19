@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NEUST San Antonio - Registration</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+     body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .header {
+      background-color: #0f4c96;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      position: relative;
+    }
+
+    .logo {
+      height: 70px;
+    }
+
+    .header-text {
+      position: absolute;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
+
+    .header-text h1 {
+      font-size: 18px;
+      margin: 0;
+      color: #ffcc00;
+    }
+
+    .header-text h2 {
+      font-size: 14px;
+      margin: 2px 0 0;
+      color: white;
+    }
+
+    .form-container {
+      background-color: #f3f3f3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      flex: 1; /* Pushes footer to the bottom */
+    }
+
+    .form-group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      width: 150px;
+      font-weight: bold;
+    }
+
+    .form-group input {
+      flex: 1;
+      padding: 8px;
+      font-size: 14px;
+    }
+
+    .password-container {
+      position: relative;
+      width: 100%;
+    }
+
+    .password-container input {
+      width: 100%;
+    }
+
+    .toggle-password {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .buttons-row {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .back-button {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .buttons-row button,
+    .back-button button {
+      padding: 10px 25px;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+      border: none;
+      border-radius: 3px;
+    }
+
+    .login-btn {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .clear-btn {
+      background-color: yellow;
+    }
+
+    .log-btn {
+      background-color: greenyellow;
+      color: white;
+    }
+
+    .clear2-btn {
+      background-color: yellowgreen;
+    }
+
+    .back-btn {
+      background-color: orange;
+      color: white;
+    }
+
+    .footer-banner {
+      background-color: #f7a933;
+      text-align: center;
+      padding: 15px;
+      font-weight: bold;
+      color: #333;
+      font-size: 14px;
+    }
+
+    .footer-banner strong {
+      display: block;
+      margin-top: 5px;
+    }
+
+    span, button {
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <img src="logo.webp" alt="Left Logo" class="logo">
+    <div class="header-text">
+      <h1>NUEVA ECIJA UNIVERSITY OF SCIENCE AND TECHNOLOGY</h1>
+      <h2>San Antonio Off-Campus</h2>
+    </div>
+    <img src="2.png" alt="Right Logo" class="logo">
+  </div>
+
+  <!-- Form -->
+  <div class="form-container">
+    <div class="form-box">
+
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <div class="password-container">
+          <input type="text" id="username" placeholder="Enter username">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <div class="password-container">
+          <input type="password" id="password">
+          <span class="toggle-password">
+  <button type="button" onclick="togglePassword('password', this)">Show</button>
+</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="confirm-password">Confirm Password:</label>
+        <div class="password-container">
+          <input type="password" id="confirm-password">
+          <span class="toggle-password">
+  <button type="button" onclick="togglePassword('confirm-password', this)">Show</button>
+</span>
+        </div>
+      </div>
+
+      <div class="buttons-row">
+        <button class="login-btn" onclick="validatePasswords()"><a href="home.html">LOGIN</a></button>
+        <button class="clear-btn" onclick="clearForm()">CLEAR</button>
+      </div>
+
+      <div class="buttons-row">
+        <button class="log-btn" onclick="validatePasswords()"><a href="home.html">LOGIN</a></button>
+        <button class="clear2-btn" onclick="clearForm()">CLEAR</button>
+      </div>
+
+      <div class="back-button">
+        <button class="back-btn" onclick="window.history.back()">BACK</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer-banner">
+    TRANSFORMING LIVES THROUGH SCIENCE AND TECHNOLOGY
+    <strong>GAWA Hindi Salita!</strong>
+  </div>
+ 
+<script>
+  function validatePasswords() {
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirm-password').value;
+
+    if (password === confirmPassword) {
+      alert("Password created successfully!");
+    } else {
+      alert("Passwords did not match.");
+    }
+  }
+
+  function clearForm() {
+    document.getElementById('username').value = '';
+    document.getElementById('password').value = '';
+    document.getElementById('confirm-password').value = '';
+  }
+
+  function togglePassword(inputId, button) {
+    const passwordField = document.getElementById(inputId);
+
+    if (passwordField.type === "password") {
+      passwordField.type = "text";
+      button.textContent = "Hide";
+    } else {
+      passwordField.type = "password";
+      button.textContent = "Show";
+    }
+  }
+</script>
+
+
+</body>
+</html>
